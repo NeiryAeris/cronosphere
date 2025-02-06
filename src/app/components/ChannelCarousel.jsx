@@ -2,10 +2,10 @@
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import { items } from "../assets/inventory";
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { channels } from "../assets/data";
 
-export default function ChannelCarousel() {
+export default function ChannelCarousel({ onSelectChannel }) {
   const carouselRef = useRef(null);
 
   const scrollLeft = () => {
@@ -32,12 +32,17 @@ export default function ChannelCarousel() {
         className="w-auto h-auto rounded-md flex gap-5 px-2 mx-3 justify-between overflow-hidden whitespace-nowrap"
       >
         {channels.map((channel, index) => (
-        <div className=" w-auto h-auto flex justify-center text-center items-center hover:bg-slate-600 px-2 rounded-md flex-shrink-0">
-          <Image src={channel.img} alt="Artwork 1" className="w-[50px] h-[50px] rounded-lg" />
-          <p className="font-sans font-semibold ml-2 break-words whitespace-normal max-w-[150px] text-left">
-            {channel.title}
-          </p>
-        </div>))}
+          <div
+          key={channel.id || index}
+            className=" w-auto h-auto flex justify-center text-center items-center hover:bg-slate-600 px-2 rounded-md flex-shrink-0"
+            onClick={() => onSelectChannel(channel.title)}
+          >
+            <Image src={channel.img} alt="Artwork 1" className="w-[50px] h-[50px] rounded-lg" />
+            <p className="font-sans font-semibold ml-2 break-words whitespace-normal max-w-[150px] text-left">
+              {channel.title}
+            </p>
+          </div>
+        ))}
       </div>
       <button
         onClick={scrollRight}

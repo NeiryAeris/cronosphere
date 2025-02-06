@@ -3,7 +3,7 @@ import { items } from "../assets/inventory";
 import Image from "next/image";
 import ChannelCarousel from "./ChannelCarousel";
 
-export default function ChannelRibbon() {
+export default function ChannelRibbon({onSelectChannel}) {
   return (
     <div className="flex items-center w-auto h-auto bg-slate-700 ">
       <div className="hover:bg-slate-300 px-4 m-3 rounded-lg">
@@ -15,7 +15,7 @@ export default function ChannelRibbon() {
           <p className="font-sans font-semibold ml-2">All Channels</p>
         </div>
       </div>
-      <ChannelCarousel />
+      <ChannelCarousel onSelectChannel={onSelectChannel} />
     </div>
   );
 }
