@@ -36,7 +36,7 @@ export default async function ArtworkDetail({ params }) {
   return (
     <div className="container p-4 flex w-screen h-screen">
       {/* artwork section */}
-      <div className="mt-4 w-full h-full">
+      <div className="flex-1 flex items-center justify-center">
         <Image src={artwork.img} alt={artwork.title} width={600} height={600} className="rounded-lg" />
       </div>
       {/* artist section */}
@@ -99,7 +99,7 @@ export default async function ArtworkDetail({ params }) {
         </div>
         {/* Comment section */}
         <div className="bg-slate-700 rounded-lg p-4 mt-3">
-          <input type="text" className="w-[400px]"/>
+          <input type="text" className="w-[400px] ml-2 bg-slate-500 rounded-xl p-2" placeholder="Enter your comment"/>
         </div>
         {/* tags */}
         <div className="bg-slate-700 rounded-lg p-4 mt-3">
