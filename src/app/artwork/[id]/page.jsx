@@ -34,13 +34,13 @@ export default async function ArtworkDetail({ params }) {
   }
 
   return (
-    <div className="container p-4 flex w-screen h-screen">
+    <div className="flex box-border">
       {/* artwork section */}
-      <div className="flex-1 flex items-center justify-center">
-        <Image src={artwork.img} alt={artwork.title} width={600} height={600} className="rounded-lg" />
+      <div className="flex-1 flex items-center justify-center w-screen">
+        <Image src={artwork.img} alt={artwork.title} className="rounded-lg" />
       </div>
       {/* artist section */}
-      <div className="absolute right-2 ml-4  w-[450px] mr-5 box-border">
+      <div className="ml-auto w-[450px] box-border mr-6">
         {/* infomation section */}
         <div className="bg-slate-700 rounded-lg p-4">
           <div className="flex items-center">
@@ -99,14 +99,16 @@ export default async function ArtworkDetail({ params }) {
         </div>
         {/* Comment section */}
         <div className="bg-slate-700 rounded-lg p-4 mt-3">
-          <input type="text" className="w-[400px] ml-2 bg-slate-500 rounded-xl p-2" placeholder="Enter your comment"/>
+          <input type="text" className="w-[400px] ml-2 bg-slate-500 rounded-xl p-2" placeholder="Enter your comment" />
         </div>
         {/* tags */}
         <div className="bg-slate-700 rounded-lg p-4 mt-3">
           <p>Tags</p>
           <div className="flex flex-wrap mt-2">
             {artwork.tags.map((tag, index) => (
-              <p className="p-1 bg-slate-400 m-1 rounded-md text-xs" key={index}>#{tag}</p>
+              <p className="p-1 bg-slate-400 m-1 rounded-md text-xs" key={index}>
+                #{tag}
+              </p>
             ))}
           </div>
         </div>
