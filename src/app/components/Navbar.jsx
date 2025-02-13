@@ -4,8 +4,11 @@ import Link from "next/link";
 import SearchInput from "./SearchInput";
 import { ShoppingCart } from "lucide-react";
 import { MoreVertical } from "lucide-react";
+import { useState } from "react";
 
 export default function Navbar() {
+  const loggedIn = false;
+  const loggin = useState(loggedIn);
   return (
     <div className="w-auto h-[80px] bg-slate-600 mb-5 flex items-center sticky top-0 z-50">
       <Image src={items.dummy} alt="Logo 1" className="w-[50px] h-[50px] rounded-lg ml-7" />
