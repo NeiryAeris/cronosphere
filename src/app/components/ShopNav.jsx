@@ -1,76 +1,107 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
+import { useRef, useEffect, useState } from "react";
 import { items } from "../assets/inventory";
-import { useState } from "react";
 import { marketTags } from "../assets/data";
 
 export default function ShopNav() {
   const [showTags, setShowTags] = useState(false);
   const [showSection2, setShowSection2] = useState(true);
-  const maxVisibleTags = 10;
+  const [maxVisibleTags, setMaxVisibleTags] = useState(10);
+  const containerRef = useRef(null);
+
+  // Dynamically update maxVisibleTags to fit available space
+  useEffect(() => {
+    const updateMaxTags = () => {
+      if (containerRef.current) {
+        const containerWidth = containerRef.current.clientWidth; // Get container width
+        const tagWidth = 100; // Approximate tag width
+        const spacing = 8; // Approximate gap between tags
+        const tagsPerRow = Math.floor(containerWidth / (tagWidth + spacing));
+
+        setMaxVisibleTags(tagsPerRow - 1); // Reserve space for "Show More"
+      }
+    };
+
+    updateMaxTags();
+    window.addEventListener("resize", updateMaxTags);
+    return () => window.removeEventListener("resize", updateMaxTags);
+  }, []);
+
   return (
     <div>
+      {/* Section 1 - Toggle Section 2 */}
       <div className="flex w-auto h-auto m-2 gap-2">
-        {/*1. this section will decided weather section 2 appear or not*/}
-        <div onClick={() => setShowSection2(true)}>
+        <div onClick={() => setShowSection2(true)} className="cursor-pointer">
           <Image src={items.wide_banner} alt="logo" className="h-24 object-cover" />
         </div>
-        <div onClick={() => setShowSection2(false)}>
+        <div onClick={() => setShowSection2(false)} className="cursor-pointer">
           <Image src={items.wide_banner} alt="logo" className="h-24 object-cover" />
         </div>
       </div>
 
-      {/*2. this section will appear if section 1 is clicked
-        also gonna control the tags list in section 3*/}
+      {/* Section 2 - Appears only if showSection2 is true */}
       {showSection2 && (
         <div className="flex w-auto h-auto m-2 gap-2">
-          <div onClick={() => {}}>
-            <Image src={items.sub_banner} alt="logo" className="h-24 object-cover" />{" "}
-          </div>
-          <div>
-            <Image src={items.sub_banner} alt="logo" className="h-24 object-cover" />{" "}
-          </div>
-          <div onClick={() => {}}>
-            <Image src={items.sub_banner} alt="logo" className="h-24 object-cover" />{" "}
-          </div>
-          <div onClick={() => {}}>
-            <Image src={items.sub_banner} alt="logo" className="h-24 object-cover" />{" "}
-          </div>
-          <div onClick={() => {}}>
-            <Image src={items.sub_banner} alt="logo" className="h-24 object-cover" />{" "}
-          </div>
-          <div onClick={() => {}}>
-            <Image src={items.sub_banner} alt="logo" className="h-24 object-cover" />{" "}
-          </div>
-          <div onClick={() => {}}>
-            <Image src={items.sub_banner} alt="logo" className="h-24 object-cover" />{" "}
-          </div>
+          {[...Array(7)].map((_, index) => (
+            <div key={index} className="cursor-pointer">
+              <Image src={items.sub_banner} alt="logo" className="h-24 object-cover" />
+            </div>
+          ))}
         </div>
       )}
 
-      {/* 3. this is where the tags lies */}
+      {/* Section 3 - Tags List (Only appears if Section 2 is visible) */}
       {showSection2 && (
-        <div className={`w-auto h-auto m-2 ${showTags ? "flex-col" : "flex"} gap-2`}>
-          <div className="flex flex-wrap gap-2">
-            {marketTags.slice(0, showTags ? marketTags.length : maxVisibleTags).map((tag, index) => (
+        <div ref={containerRef} className="w-auto h-auto m-2">
+          <div className="flex flex-wrap items-center gap-2">
+            {/* Display dynamically calculated number of tags */}
+            {marketTags.slice(0, showTags ? marketTags.length : maxVisibleTags - 1).map((tag, index) => (
               <p key={index} className="text-gray-300 bg-gray-800 px-2 py-1 rounded-sm">
                 {tag.tagName}
               </p>
             ))}
-          </div>
 
-          {/* "See More" Button */}
-          {marketTags.length > maxVisibleTags && (
-            <button
-              className=" text-blue-400 hover:text-blue-500 hover:bg-slate-600 rounded-sm p-1 box-border"
-              onClick={() => setShowTags(!showTags)}
-            >
-              {showTags ? "See Less" : "See More"}
-            </button>
-          )}
+            {/* "Show More" button always stays in line */}
+            {marketTags.length > maxVisibleTags && (
+              <p
+                className="text-blue-400 hover:text-blue-500 hover:bg-slate-600 rounded-sm p-1 box-border cursor-pointer"
+                onClick={() => setShowTags(!showTags)}
+              >
+                {showTags ? "Show Less" : "Show More"}
+              </p>
+            )}
+          </div>
         </div>
       )}
+
+      {/* Section 4 - Filter Bar */}
+      <div className="flex items-center bg-gray-900 p-2 rounded-md mt-4">
+        <input
+          type="text"
+          placeholder="Search..."
+          className="flex-grow bg-gray-800 text-white p-2 rounded-md outline-none"
+        />
+        <div className="ml-4 flex gap-4">
+          <select className="bg-gray-800 text-white p-2 rounded-md">
+            <option>Software: ALL</option>
+            <option>Photoshop</option>
+            <option>Blender</option>
+            <option>Substance Painter</option>
+          </select>
+          <select className="bg-gray-800 text-white p-2 rounded-md">
+            <option>License: ALL</option>
+            <option>Commercial</option>
+            <option>Personal</option>
+          </select>
+          <select className="bg-gray-800 text-white p-2 rounded-md">
+            <option>Price: ALL</option>
+            <option>Free</option>
+            <option>Paid</option>
+          </select>
+          <button className="text-blue-400 hover:text-blue-500">Clear Filters</button>
+        </div>
+      </div>
     </div>
   );
 }
