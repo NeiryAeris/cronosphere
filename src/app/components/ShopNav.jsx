@@ -106,14 +106,14 @@ export default function ShopNav() {
       </div> */}
 
       <div className="flex items-center p-2 rounded-md mt-4">
-        <div className="w-full h-auto box-border border border-white">
+        <div className="w-full h-auto box-border border border-white max-w-screen-xl">
           <input
             type="text"
             placeholder="Search..."
             className="flex-grow bg-[#171717] text-white p-2 outline-none w-[99%] m-1 bg-inherit"
           />
         </div>
-        <div className="ml-4 flex gap-4 items-center">
+        <div className="flex gap-4 items-center justify-between w-max max-w-screen-md ">
           <div className="items-center justify-center text-center">
             <p>Software</p>
           </div>
