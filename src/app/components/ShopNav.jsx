@@ -3,6 +3,9 @@ import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
 import { items } from "../assets/inventory";
 import { marketTags } from "../assets/data";
+import { Search } from "lucide-react";
+import FilterBar from "./FilterBar";
+import DummyBar from "../FiringRange/DummyBar";
 
 export default function ShopNav() {
   const [showTags, setShowTags] = useState(false);
@@ -76,58 +79,8 @@ export default function ShopNav() {
       )}
 
       {/* Section 4 - Filter Bar */}
-      {/* <div className="flex items-center p-2 rounded-md mt-4">
-        <div className="w-full h-auto box-border border border-white">
-          <input
-            type="text"
-            placeholder="Search..."
-            className="flex-grow bg-[#171717] text-white p-2 outline-none w-[99%] m-1 bg-inherit"
-          />
-        </div>
-        <div className="ml-4 flex gap-4">
-          <select className="bg-inherit text-white p-2 rounded-md">
-            <option>Software: ALL</option>
-            <option>Photoshop</option>
-            <option>Blender</option>
-            <option>Substance Painter</option>
-          </select>
-          <select className="bg-inherit text-white p-2 rounded-md">
-            <option>License: ALL</option>
-            <option>Commercial</option>
-            <option>Personal</option>
-          </select>
-          <select className="bg-inherit text-white p-2 rounded-md">
-            <option>Price: ALL</option>
-            <option>Free</option>
-            <option>Paid</option>
-          </select>
-          <button className="text-blue-400 hover:text-blue-500">Clear Filters</button>
-        </div>
-      </div> */}
-
-      <div className="flex items-center p-2 rounded-md mt-4">
-        <div className="w-full h-auto box-border border border-white max-w-screen-xl">
-          <input
-            type="text"
-            placeholder="Search..."
-            className="flex-grow bg-[#171717] text-white p-2 outline-none w-[99%] m-1 bg-inherit"
-          />
-        </div>
-        <div className="flex gap-4 items-center justify-between w-max max-w-screen-md ">
-          <div className="items-center justify-center text-center">
-            <p>Software</p>
-          </div>
-          <div className="items-center justify-center text-center">
-            <p>License</p>
-          </div>
-          <div className="items-center justify-center text-center">
-            <p>Price</p>
-          </div>
-          <div className="items-center justify-center text-center">
-            <p>Clear Filters</p>
-          </div>
-        </div>
-      </div>
+      <FilterBar />
+      {/* <DummyBar /> */}
     </div>
   );
 }

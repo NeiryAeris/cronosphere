@@ -17,7 +17,7 @@ export default function Navbar() {
     <div className="w-auto h-[80px] bg-slate-600 mb-5 flex items-center sticky top-0 z-50">
       <Image src={items.dummy} alt="Logo 1" className="w-[50px] h-[50px] rounded-lg ml-7" />
       <div className="justify-between flex gap-8 ml-5 items-center font-sans font-semibold text-slate-300">
-        <Link className="hover:bg-slate-700 h-auto" href="/Explore">
+        <Link className="hover:bg-slate-700 h-auto" href="/">
           Explore
         </Link>
         <Link className="hover:bg-slate-700 h-auto" href="/Learn">

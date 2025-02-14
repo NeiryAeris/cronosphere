@@ -12,15 +12,15 @@ export default function ChannelDisplay({ selectedChannel, className }) {
           .filter((artwork) => artwork.channelTitle === selectedChannel)
           .map((artwork, index) => (
             <Link key={artwork.id} href={`/artwork/${artwork.id}`}>
-            <div key={index} className="max-w-[250px] max-h-[250px] w-[250px] h-[250px]">
-              <Image
-                src={artwork.img}
-                alt={artwork.title}
-                className="object-cover overflow-hidden w-full h-full rounded-sm"
-                width={250}
-                height={250}
-              />
-            </div>
+              <div key={index} className="max-w-[250px] max-h-[250px] w-[250px] h-[250px]">
+                <Image
+                  src={artwork.img}
+                  alt={artwork.title}
+                  className="object-cover overflow-hidden w-full h-full rounded-sm"
+                  width={250}
+                  height={250}
+                />
+              </div>
             </Link>
           ))}
       </div>
