@@ -14,7 +14,7 @@ export const marketItems = Array.from({ length: 100 }, (_, index) => {
 
   return {
     itemID: index + 1,
-    itemName: "dummy item", // Random name from 15 types
+    itemName: "Mademoiselle Furina art", // Random name from 15 types
     itemPrice: Math.floor(Math.random() * 145) + 5, // Random price between $5-$150
     itemTags: tagNames,
     itemCategory: uniqueCategories.length > 0 ? uniqueCategories[0] : "Miscellaneous", // Assign first category
