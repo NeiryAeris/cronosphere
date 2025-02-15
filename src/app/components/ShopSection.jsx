@@ -14,10 +14,10 @@ export default function ShopSection() {
             <div key={item.itemID} className="max-w-[350px] w-[350px] hover:bg-slate-800 pb-2">
               <Image src={item.itemImage} alt={item.itemName} width={350} height={350} />
               <h1 className="m-2">{item.itemName}</h1>
-              <div className="m-2 flex">
+              <div className="ml-2 flex">
                 <Image src={avatar} alt="artist avatar" width={20} height={20} className="max-w-[20px] max-h-[20px] mr-2 rounded-2xl"/>
                 <p>by {item.itemAuthorID}</p>
-                <p className="ml-auto mr-2">{item.itemPrice}$</p>
+                <p className="ml-auto px-2 bg-slate-500">{item.itemPrice}$</p>
               </div>
             </div>
           </Link>
