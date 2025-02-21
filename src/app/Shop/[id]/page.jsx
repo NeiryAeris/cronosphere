@@ -2,13 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import avatar from "./alting.jpg";
 import { Heart, ShoppingBasket } from "lucide-react";
+import { previewPics } from "./temporary_assets/temp";
+import ItemPreview from "@/app/components/MarketplaceSection/ItemPreview";
 
 export default async function MarketItemDetail({ params }) {
   const { id } = await params;
 
   return (
-    <div className="px-10 box-border">
-      <div className="w-full bg-slate-600 mr-10">
+    <div className="px-10 box-border mx-48 min-h-screen">
+      <div className="w-full bg-slate-600 mr-10 mb-2">
         <div>
           <p>Marketplace / Game Assets / Industrial Smart Materials</p>
         </div>
@@ -28,9 +30,11 @@ export default async function MarketItemDetail({ params }) {
         </div>
       </div>
 
-      <div className="flex w-full bg-slate-400">
+      <div className="flex w-full">
         {/* the section below is marketplace item descriptions */}
-        <div className="w-screen"></div>
+        <div className="w-screen mr-2 pt-2 bg-orange-500 pb-2">
+          <ItemPreview context={previewPics} />
+        </div>
         {/* later on, the section below will display the bundles that the item have */}
         <div className="w-[750px]">
           <div className="mb-5 bg-cyan-600 mx-4 p-4 rounded-md border box-border">
