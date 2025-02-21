@@ -1,6 +1,6 @@
 "use client";
 import Navbar from "../components/Navbar";
-import BannerCarousel from "../components/BannerCarousel";
+import BannerCarousel from "../components/ChannelSection/BannerCarousel";
 import ChannelRibbon from "../components/ChannelRibbon";
 import ChannelDisplay from "../components/ChannelDisplay";
 import { useState } from "react";

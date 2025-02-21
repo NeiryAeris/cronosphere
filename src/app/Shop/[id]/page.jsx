@@ -35,7 +35,7 @@ export default async function MarketItemDetail({ params }) {
         <div className="w-[750px]">
           <div className="mb-5 bg-cyan-600 mx-4 p-4 rounded-md border box-border">
             <div>
-              <h1>
+              <h1 className="flex justify-between">
                 bundle title <span>Free</span>
               </h1>
             </div>
@@ -46,7 +46,7 @@ export default async function MarketItemDetail({ params }) {
               <p>License type</p>
             </div>
             <div className="flex">
-              <div className="w-full flex justify-center text-center hover:bg-slate-400 mx-2 my-1 bg-yellow-500 rounded-md py-3">
+              <div className="w-full flex justify-center text-center hover:bg-slate-400 mr-2 my-1 bg-yellow-500 rounded-md py-3">
                 <ShoppingBasket size={20} />
                 <p className="pl-2">Add To Cart</p>
               </div>
@@ -57,7 +57,7 @@ export default async function MarketItemDetail({ params }) {
           </div>
           <div className="mb-5 bg-cyan-600 mx-4 p-4 rounded-md border box-border">
             <div>
-              <h1>
+              <h1 className="flex justify-between">
                 bundle title <span>Free</span>
               </h1>
             </div>
@@ -68,7 +68,7 @@ export default async function MarketItemDetail({ params }) {
               <p>License type</p>
             </div>
             <div className="flex">
-              <div className="w-full flex justify-center text-center hover:bg-slate-400 mx-2 my-1 bg-yellow-500 rounded-md py-3">
+              <div className="w-full flex justify-center text-center hover:bg-slate-400 mr-2 my-1 bg-yellow-500 rounded-md py-3">
                 <ShoppingBasket size={20} />
                 <p className="pl-2">Add To Cart</p>
               </div>
@@ -79,7 +79,7 @@ export default async function MarketItemDetail({ params }) {
           </div>
           <div className="mb-5 bg-cyan-600 mx-4 p-4 rounded-md border box-border">
             <div>
-              <h1>
+              <h1 className="flex justify-between">
                 bundle title <span>Free</span>
               </h1>
             </div>
@@ -90,7 +90,7 @@ export default async function MarketItemDetail({ params }) {
               <p>License type</p>
             </div>
             <div className="flex">
-              <div className="w-full flex justify-center text-center hover:bg-slate-400 mx-2 my-1 bg-yellow-500 rounded-md py-3">
+              <div className="w-full flex justify-center text-center hover:bg-slate-400 mr-2 my-1 bg-yellow-500 rounded-md py-3">
                 <ShoppingBasket size={20} />
                 <p className="pl-2">Add To Cart</p>
               </div>

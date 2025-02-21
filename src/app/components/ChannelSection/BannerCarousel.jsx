@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { items } from "../assets/inventory";
+import { items } from "../../assets/inventory";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 

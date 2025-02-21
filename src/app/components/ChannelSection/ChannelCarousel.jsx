@@ -1,9 +1,9 @@
 "use client";
 import { ChevronRight, ChevronLeft } from "lucide-react";
-import { items } from "../assets/inventory";
+import { items } from "@/app/assets/inventory";
 import Image from "next/image";
 import { useRef, useState } from "react";
-import { channels } from "../assets/data";
+import { channels } from "@/app/assets/data";
 
 export default function ChannelCarousel({ onSelectChannel }) {
   const carouselRef = useRef(null);

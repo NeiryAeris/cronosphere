@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { artworks } from "../assets/data";
+import { artworks } from "@/app/assets/data";
 import Image from "next/image";
 
 export default function ChannelDisplay({ selectedChannel, className }) {

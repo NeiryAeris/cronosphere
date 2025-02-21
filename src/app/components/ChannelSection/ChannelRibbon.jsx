@@ -1,5 +1,5 @@
 import { MapPin, MoreVertical } from "lucide-react";
-import { items } from "../assets/inventory";
+import { items } from "@/app/assets/inventory";
 import Image from "next/image";
 import ChannelCarousel from "./ChannelCarousel";
 
