@@ -2,11 +2,26 @@ import Image from "next/image";
 import Link from "next/link";
 import avatar from "./alting.jpg";
 import { Heart, ShoppingBasket } from "lucide-react";
-import { previewPics } from "./temporary_assets/temp";
+import { artists, marketItems } from "@/app/assets/data";
 import ItemPreview from "@/app/components/MarketplaceSection/ItemPreview";
+import { notFound } from "next/navigation";
 
 export default async function MarketItemDetail({ params }) {
   const { id } = await params;
+  const marketItem = marketItems.find((item) => item.itemID === Number(id));
+  // const artist = artists.find((itemArtist) => itemArtist.name === marketItem.itemAuthor) || {
+  //   name: "Unknown",
+  //   img: avatar,
+  //   title: "concept artist",
+  // };
+
+  if (!marketItem) {
+    return notFound(); // Show 404 if artwork is not found
+  }
+  // if (!artist) {
+  //   artist.name = "Unknown";
+  //   artist.img = avatar;
+  // }
 
   return (
     <div className="px-10 box-border mx-48 min-h-screen">
@@ -33,7 +48,7 @@ export default async function MarketItemDetail({ params }) {
       <div className="flex w-full">
         {/* the section below is marketplace item descriptions */}
         <div className="w-screen mr-2 pt-2 bg-orange-500 pb-2">
-          <ItemPreview context={previewPics} />
+          <ItemPreview previewPics={marketItem.previewPics} />
         </div>
         {/* later on, the section below will display the bundles that the item have */}
         <div className="w-[750px]">

@@ -1,4 +1,4 @@
-import { marketItems } from "../assets/data2";
+import { marketItems } from "../assets/data";
 import Image from "next/image";
 import Link from "next/link";
 import avatar from '../assets/avatar.jpg'

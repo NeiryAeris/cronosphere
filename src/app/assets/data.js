@@ -22,6 +22,15 @@ import artwork_img_10 from "./artwork_10.jpg";
 
 import avatar from "./avatar.jpg";
 
+import market_banner from "./market_banner.jpg"; // Placeholder image
+import item1 from "./i_really_like_this_character.jpg";
+import item2 from "./i_really_like_this_character.jpg";
+import item3 from "./i_really_like_this_character.jpg";
+import item4 from "./i_really_like_this_character.jpg";
+import item5 from "./i_really_like_this_character.jpg";
+import item6 from "./i_really_like_this_character.jpg";
+import item7 from "./this_pic_really_beautifull.jpg";
+
 // Define channels with unique images
 export const channels = [
   { id: 1, img: channel_img_1, title: "Channel 1", artworkImg: artwork_img_1 },
@@ -176,3 +185,40 @@ export const marketTags = [
   { tagID: 96, tagName: "Mental Ray", categories: ["Tutorials"] },
   { tagID: 97, tagName: "Terragen", categories: ["Tutorials"] },
 ];
+
+export const marketItems = Array.from({ length: 100 }, (_, index) => {
+  // Randomly select 2-4 tags for this item
+  const selectedTags = marketTags
+    .sort(() => 0.5 - Math.random()) // Shuffle the tags
+    .slice(0, Math.floor(Math.random() * 3) + 2); // Pick 2-4 tags
+
+  const tagNames = selectedTags.map((tag) => tag.tagName); // Extract tag names
+  const allCategories = selectedTags.flatMap((tag) => tag.categories); // Extract categories from each tag
+  const uniqueCategories = [...new Set(allCategories)]; // Remove duplicates
+
+  return {
+    itemID: index + 1,
+    itemName: "Mademoiselle Furina art", // Random name from 15 types
+    itemPrice: Math.floor(Math.random() * 145) + 5, // Random price between $5-$150
+    itemTags: tagNames,
+    itemCategory: uniqueCategories.length > 0 ? uniqueCategories[0] : "Miscellaneous", // Assign first category
+    itemAuthor: `Artist ${Math.floor(Math.random() * 20) + 1}`, // Assigning up to 20 different authors
+    itemAuthorID: Math.floor(Math.random() * 20) + 1,
+    itemImage: market_banner, // Placeholder image
+    comments: ["Amazing picture!", "I love the details."],
+    previewPics: [item1, item2, item3, item4, item5, item6, item7],
+  };
+});
+
+export const sampleItem = {
+  itemID: 1,
+  itemName: "Mademoiselle Furina art", // Random name from 15 types
+  itemPrice: Math.floor(Math.random() * 145) + 5, // Random price between $5-$150
+  itemTags: "Guides",
+  itemCategory: "Miscellaneous", // Assign first category
+  itemAuthor: `Artist ${Math.floor(Math.random() * 20) + 1}`, // Assigning up to 20 different authors
+  itemAuthorID: Math.floor(Math.random() * 20) + 1,
+  itemImage: market_banner, // Placeholder image
+  comments: ["Amazing picture!", "I love the details."],
+  previewPics: [item1, item2, item3, item4, item5, item6, item7],
+};
