@@ -1,16 +1,9 @@
 # syntax=docker/dockerfile:1
 
-# Comments are provided throughout this file to help you get started.
-# If you need more help, visit the Dockerfile reference guide at
-# https://docs.docker.com/go/dockerfile-reference/
-
-# Want to help us make this template better? Share your feedback here: https://forms.gle/ybq9Krt8jtBL3iCk7
-
 ARG NODE_VERSION=22.12.0
 
-FROM node:${NODE_VERSION}-alpine
-
-# Stage 1: Build the application
+# Stage 1: Build the application with an alias "builder"
+FROM node:${NODE_VERSION}-alpine AS builder
 WORKDIR /app
 
 # Copy package files and install dependencies
@@ -18,7 +11,7 @@ COPY package.json yarn.lock* package-lock.json* ./
 RUN npm install
 
 # Copy all files and build the Next.js app
-COPY . .
+COPY . ./
 RUN npm run build
 
 # Stage 2: Run the production build
@@ -37,7 +30,7 @@ RUN npm install --production
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
 
-# Expose the default Next.js port
+# Expose the configured port
 EXPOSE 9000
 
 # Start the application
