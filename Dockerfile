@@ -16,6 +16,11 @@ ENV PORT 9000
 
 WORKDIR /usr/src/app
 
+COPY next.config.mjs /usr/src/app/
+COPY tailwind.config.mjs /usr/src/app/
+COPY postcss.config.mjs /usr/src/app/
+COPY jsconfig.json /usr/src/app/
+
 # Download dependencies as a separate step to take advantage of Docker's caching.
 # Leverage a cache mount to /root/.npm to speed up subsequent builds.
 # Leverage a bind mounts to package.json and package-lock.json to avoid having to copy them into

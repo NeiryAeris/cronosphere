@@ -1,8 +1,8 @@
 "use client";
 import Navbar from "../components/Navbar";
 import BannerCarousel from "../components/ChannelSection/BannerCarousel";
-import ChannelRibbon from "../components/ChannelRibbon";
-import ChannelDisplay from "../components/ChannelDisplay";
+import ChannelRibbon from "../components/ChannelSection/ChannelRibbon";
+import ChannelDisplay from "../components/ChannelSection/ChannelDisplay";
 import { useState } from "react";
 
 export default function HallPage() {
