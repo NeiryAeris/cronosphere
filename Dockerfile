@@ -1,3 +1,5 @@
+# syntax=docker/dockerfile:1
+
 # Comments are provided throughout this file to help you get started.
 # If you need more help, visit the Dockerfile reference guide at
 # https://docs.docker.com/go/dockerfile-reference/
@@ -25,6 +27,7 @@ WORKDIR /app
 
 # Set environment to production
 ENV NODE_ENV production
+ENV PORT 9000
 
 # Copy only the necessary files to run the app
 COPY package.json package-lock.json* ./
@@ -35,7 +38,7 @@ COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
 
 # Expose the default Next.js port
-EXPOSE 3000
+EXPOSE 9000
 
 # Start the application
 CMD ["npm", "start"]
