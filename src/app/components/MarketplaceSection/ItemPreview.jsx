@@ -39,7 +39,7 @@ const ItemPreview = ({ previewPics }) => {
   };
 
   return (
-    <div className="bg-green-400 pb-1">
+    <div className="">
       <div>
         <div className="relative flex w-full justify-center">
           <button
@@ -59,7 +59,7 @@ const ItemPreview = ({ previewPics }) => {
         <div className="flex overflow-x-auto mb-2 custom-scrollbar pb-2 box-border">
           {imageList.map((pic, index) => (
             <Image
-              className={`mr-2 object-cover border-4 box-border cursor-pointer transition-all duration-300 ${
+              className={`mx-1 mt-1 object-cover border-4 box-border cursor-pointer transition-all duration-300 ${
                 index === currentIndex ? "border-cyan-400 border-4 scale-105" : "border-transparent"
               }`}
               src={pic}

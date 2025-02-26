@@ -207,6 +207,18 @@ export const marketItems = Array.from({ length: 100 }, (_, index) => {
     itemImage: market_banner, // Placeholder image
     comments: ["Amazing picture!", "I love the details."],
     previewPics: [item1, item2, item3, item4, item5, item6, item7],
+    itemDescription: `Lore Ismium – Relic of the Forgotten Ages
+
+    Introducing Lore Ismium, a mystical artifact forged in the echoes of ancient legends. This unique digital asset captures the enigmatic aura of lost civilizations and the whispers of forgotten magic. Perfect for game designers, digital illustrators, and storytellers, Lore Ismium adds a rich narrative element to any fantasy project.
+    
+    Key Features:
+    
+    Mythic Design: Crafted with intricate details that evoke the splendor of arcane relics, every curve and etching tells a story of a bygone era.
+    Atmospheric Texturing: Utilizing advanced PBR materials, the relic exudes an otherworldly glow that shifts subtly under varying light, enhancing its mysterious presence.
+    Narrative Integration: Designed to seamlessly blend into epic game worlds or cinematic narratives, Lore Ismium is not just a visual asset, but a gateway to a deeper lore.
+    Optimized for Flexibility: Fully compatible with leading 3D software and game engines, allowing for dynamic animations or static displays that captivate and inspire.
+    Exclusive Marketplace Item: Available on ArtStation Marketplace, this relic is a coveted piece for collectors and creators who seek to infuse their projects with a rich backstory and timeless magic.
+    Elevate your creative universe with Lore Ismium – where every pixel whispers a secret and every detail is a tribute to legends of old.`,
   };
 });
 
@@ -221,4 +233,16 @@ export const sampleItem = {
   itemImage: market_banner, // Placeholder image
   comments: ["Amazing picture!", "I love the details."],
   previewPics: [item1, item2, item3, item4, item5, item6, item7],
+  itemDescription: `Lore Ismium – Relic of the Forgotten Ages
+
+Introducing Lore Ismium, a mystical artifact forged in the echoes of ancient legends. This unique digital asset captures the enigmatic aura of lost civilizations and the whispers of forgotten magic. Perfect for game designers, digital illustrators, and storytellers, Lore Ismium adds a rich narrative element to any fantasy project.
+
+Key Features:
+
+Mythic Design: Crafted with intricate details that evoke the splendor of arcane relics, every curve and etching tells a story of a bygone era.
+Atmospheric Texturing: Utilizing advanced PBR materials, the relic exudes an otherworldly glow that shifts subtly under varying light, enhancing its mysterious presence.
+Narrative Integration: Designed to seamlessly blend into epic game worlds or cinematic narratives, Lore Ismium is not just a visual asset, but a gateway to a deeper lore.
+Optimized for Flexibility: Fully compatible with leading 3D software and game engines, allowing for dynamic animations or static displays that captivate and inspire.
+Exclusive Marketplace Item: Available on ArtStation Marketplace, this relic is a coveted piece for collectors and creators who seek to infuse their projects with a rich backstory and timeless magic.
+Elevate your creative universe with Lore Ismium – where every pixel whispers a secret and every detail is a tribute to legends of old.`,
 };
