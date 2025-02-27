@@ -53,6 +53,12 @@ export default async function MarketItemDetail({ params }) {
           <div className="mt-2">
             <p>{marketItem.itemDescription}</p>
           </div>
+          <h1 className="mt-3 mb-2">CATEGORIES</h1>
+          <div className="flex flex-wrap">
+            {marketItem.itemCategories.map((category, index) => (
+              <p key={index} className="p-2 bg-slate-600 rounded-md mr-2">{category}</p>
+            ))}
+          </div>
         </div>
         {/* later on, the section below will display the bundles that the item have */}
         <div className="w-[750px] mt-4">
@@ -150,10 +156,10 @@ export default async function MarketItemDetail({ params }) {
             </p>
           </div>
           <div>
-              <p></p>
-              <p></p>
-              <button></button>
-            </div>
+            <p></p>
+            <p></p>
+            <button></button>
+          </div>
         </div>
       </div>
     </div>
