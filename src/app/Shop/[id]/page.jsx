@@ -148,12 +148,12 @@ export default async function MarketItemDetail({ params }) {
                 <Link2 size={15} />
               </span>
             </p>
-            <div>
+          </div>
+          <div>
               <p></p>
               <p></p>
               <button></button>
             </div>
-          </div>
         </div>
       </div>
     </div>
