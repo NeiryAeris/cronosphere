@@ -20,7 +20,7 @@ export default function ChannelCarousel({ onSelectChannel }) {
     }
   };
   return (
-    <div className="flex items-center w-auto h-auto bg-slate-700 box-border mx-3">
+    <div className="flex items-center w-auto h-auto box-border mx-3">
       <button
         onClick={scrollLeft}
         className="absolute left-auto z-10 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-600 transition"
@@ -34,10 +34,10 @@ export default function ChannelCarousel({ onSelectChannel }) {
         {channels.map((channel, index) => (
           <div
           key={channel.id || index}
-            className=" w-auto h-auto flex justify-center text-center items-center hover:bg-slate-600 px-2 rounded-md flex-shrink-0"
+            className=" w-auto h-auto flex justify-center items-center hover:bg-slate-600 px-2 rounded-lg flex-shrink-0 p-2"
             onClick={() => onSelectChannel(channel.title)}
           >
-            <Image src={channel.img} alt="Artwork 1" className="w-[50px] h-[50px] rounded-lg" />
+            <Image src={channel.img} alt="Artwork 1" className="w-[45px] h-[45px] rounded-lg" width={45} height={45}/>
             <p className="font-sans font-semibold ml-2 break-words whitespace-normal max-w-[150px] text-left">
               {channel.title}
             </p>
