@@ -150,10 +150,10 @@ export default async function MarketItemDetail({ params }) {
             </p>
           </div>
           <div>
-              <p></p>
-              <p></p>
-              <button></button>
-            </div>
+            <p></p>
+            <p></p>
+            <button></button>
+          </div>
         </div>
       </div>
     </div>
